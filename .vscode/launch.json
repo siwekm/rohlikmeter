@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch Chrome with extension",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost",
+        "webRoot": "${workspaceFolder}",
+        "runtimeArgs": [
+          "--load-extension=${workspaceFolder}"
+        ],
+        "sourceMaps": true,
+        "preLaunchTask": "build",
+        "postDebugTask": "kill-chrome"
+      }
+    ]
+  }
+  

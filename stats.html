@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Statistics</h1>
+    <label for="fromOrderSelect">Select Start Order:</label>
+    <select id="fromOrderSelect"></select>
+    
+    <label for="toOrderSelect">Select End Order:</label>
+    <select id="toOrderSelect"></select>
+    
+    <button id="fetchOrderDetails">Load Orders</button>
+
+    <script type="module" src="stats.js"></script>
+    <div id="orderDetails">
+        <h3>Aggregated Item Data</h3>
+        <canvas id="categoryPieChart" width="400" height="400"></canvas>
+        <table id="itemsTable">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Total Amount</th>
+                    <th>Total Price</th>
+                    <th>Average Price</th>
+                    <th>Category Level 0</th>
+                    <th>Category Level 1</th>
+                    <th>Category Level 2</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
