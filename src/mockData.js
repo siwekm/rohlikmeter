@@ -1,5 +1,5 @@
 export function isDevelopmentMode() {
-    return true;
+    return false;
 }
 
 export const mockOrders = [

@@ -3,8 +3,8 @@
     "name": "Rohlik Meter",
     "description": "Rohlík Stats Extension",
     "version": "1.0",
-    "action": {
-      "default_popup": "index.html"
+    "background": {
+        "service_worker": "js/index.js"
     },
     "permissions": [
         "activeTab",
@@ -14,16 +14,14 @@
     "host_permissions": [
         "https://www.rohlik.cz/*"
     ],
-    "content_scripts": [
+    "web_accessible_resources": [
         {
-          "js": [
-            "js/index.js",
-            "js/stats.js"
-          ],
-          "matches": [
-            "https://rohlik.cz/*"
-          ]
+            "resources": ["*.html", "*.js"],
+            "matches": ["<all_urls>"]
         }
-      ]
+    ],
+    "action": {
+        "default_title": "Show Rohlik statistics."
+    }
 }
 

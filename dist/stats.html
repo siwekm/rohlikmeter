@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="js/stats.js"></script>
+    <script src="js/stats.js" defer></script>
     <title>Order Stats</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        select, button {
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Order Statistics</h1>
+    
     <label for="fromOrderSelect">Select Start Order:</label>
     <select id="fromOrderSelect"></select>
     
@@ -27,10 +18,15 @@
     
     <button id="fetchOrderDetails">Load Orders</button>
 
-
     <div id="orderDetails">
         <h3>Aggregated Item Data</h3>
-        <canvas id="categoryPieChart" width="400" height="400"></canvas>
+        
+        <div class="chart-container">
+            <canvas id="categoryPieChart0"></canvas>
+            <canvas id="categoryPieChart1"></canvas>
+            <canvas id="categoryPieChart2"></canvas>
+        </div>
+        
         <table id="itemsTable">
             <thead>
                 <tr>
@@ -47,6 +43,5 @@
             </tbody>
         </table>
     </div>
-    
 </body>
 </html>

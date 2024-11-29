@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^4.4.6",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4"
   }
