@@ -14,11 +14,16 @@
     "host_permissions": [
         "https://www.rohlik.cz/*"
     ],
-    "web_accessible_resources": [
+    "content_scripts": [
         {
-            "resources": ["*.html", "*.js"],
-            "matches": ["<all_urls>"]
+          "js": [
+            "js/index.js",
+            "js/stats.js"
+          ],
+          "matches": [
+            "https://rohlik.cz/*"
+          ]
         }
-    ]
+      ]
 }
 

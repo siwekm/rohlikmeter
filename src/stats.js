@@ -1,5 +1,5 @@
 import { isDevelopmentMode, mockOrders, mockOrderDetails, mockProductCategory } from './mockData.js';
-//import Chart from 'chart.js/auto'; 
+//import Chart from 'chart.js'; 
 
 document.addEventListener('DOMContentLoaded', function () {
     const fromOrderSelect = document.getElementById('fromOrderSelect');
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         Promise.all(categoryPromises)
             .then(itemsWithCategories => {
-                //renderCategoryPieChart(categoryTotals);
+                renderCategoryPieChart(categoryTotals);
 
                 // Now that we have all the category data, insert rows into the table
                 itemsWithCategories.forEach(item => {
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Function to render the pie chart
-    /*
+    
     function renderCategoryPieChart(categoryTotals) {
         const ctx = document.getElementById('categoryPieChart').getContext('2d');
 
@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Create the pie chart
+        /*
         new Chart(ctx, {
             type: 'pie',
             data: data,
@@ -300,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+        */
     }
-*/
 
 });
