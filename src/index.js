@@ -1,24 +1,6 @@
-import { isDevelopmentMode, mockOrders } from './mockData.js';
-
 chrome.action.onClicked.addListener(() => {
+    fetchOrders();
 
-    if (isDevelopmentMode()) {
-        fetchMockedOrders();
-    } else {
-        fetchOrders();
-    }
-
-    // Mock function to simulate fetching data from the API
-    function fetchMockedOrders() {
-        const mockData = mockOrders;
-        setTimeout(() => {
-            console.log("Fetched mocked orders:", mockData);
-            storeOrdersData(mockData);
-            openNewTab();
-        }, 1000);
-    }
-
-    // Fetch orders rohlik endpoint
     function fetchOrders() {
         fetch('https://www.rohlik.cz/api/v3/orders/delivered?limit=100')
             .then(response => {
@@ -32,7 +14,7 @@ chrome.action.onClicked.addListener(() => {
                 openNewTab();
             })
             .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error('Failed to fetch orders from rohlik:', error);
             });
     }
 

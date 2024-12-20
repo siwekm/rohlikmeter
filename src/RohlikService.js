@@ -1,9 +1,5 @@
-import { isDevelopmentMode, mockOrderDetails, mockProductCategory } from './mockData.js';
 
 export function fetchOrderDetails(orderId) {
-    if (isDevelopmentMode()) {
-        return fetchMockedOrderDetails(orderId);
-    }
     return fetch(`https://www.rohlik.cz/api/v3/orders/${orderId}`).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -12,41 +8,12 @@ export function fetchOrderDetails(orderId) {
     });
 }
 
-export function fetchMockedOrderDetails(orderId) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const mockData = mockOrderDetails[orderId];
-            if (mockData) {
-                resolve(mockData);
-            } else {
-                reject(new Error('Order not found'));
-            }
-        }, 200);
-    });
-}
-
 export function fetchProductCategory(productID) {
-    if (isDevelopmentMode()) {
-        return fetchMockedProductCategory();
-    }
     return fetch(`https://www.rohlik.cz/api/v1/products/${productID}/categories`).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return response.json();
-    });
-}
-
-export function fetchMockedProductCategory() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const mockData = mockProductCategory;
-            if (mockData) {
-                resolve(mockData);
-            } else {
-                reject(new Error('Order not found'));
-            }
-        }, 200);
     });
 }
 

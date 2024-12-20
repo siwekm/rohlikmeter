@@ -1,9 +1,5 @@
-import { isDevelopmentMode, mockOrders } from './mockData.js';
 
 export async function loadOrders() {
-    if (isDevelopmentMode()) {
-        return mockOrders;
-    }
     return new Promise(resolve => {
         chrome.storage.local.get('ordersData', result => {
             if (result.ordersData) {
