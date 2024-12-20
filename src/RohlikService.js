@@ -1,3 +1,15 @@
+export async function fetchOrders() {
+    try {
+        const response = await fetch('https://www.rohlik.cz/api/v3/orders/delivered?limit=100');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to fetch orders from Rohlik:', error);
+        throw error;
+    }
+}
 
 export function fetchOrderDetails(orderId) {
     return fetch(`https://www.rohlik.cz/api/v3/orders/${orderId}`).then(response => {

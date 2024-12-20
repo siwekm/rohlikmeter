@@ -1,16 +1,4 @@
 
-export async function loadOrders() {
-    return new Promise(resolve => {
-        chrome.storage.local.get('ordersData', result => {
-            if (result.ordersData) {
-                resolve(JSON.parse(result.ordersData));
-            } else {
-                resolve([]);
-            }
-        });
-    });
-}
-
 export function populateOrderSelect(orders, fromOrderSelect, toOrderSelect) {
     orders.forEach(order => {
         const fromOption = document.createElement('option');

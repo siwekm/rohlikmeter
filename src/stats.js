@@ -1,9 +1,9 @@
 import {
-    loadOrders,
     populateOrderSelect,
     getOrdersInRange
 } from './orderUtils.js';
 import {
+    fetchOrders,
     fetchOrderDetails,
 } from './RohlikService.js';
 import {
@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const fetchOrderDetailsButton = document.getElementById('fetchOrderDetails');
     const orderDetailsDiv = document.getElementById('orderDetails');
 
-    // Load and populate orders
-    const orders = await loadOrders();
+    const orders = await fetchOrders();
     populateOrderSelect(orders, fromOrderSelect, toOrderSelect);
 
     fetchOrderDetailsButton.addEventListener('click', async () => {
