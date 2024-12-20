@@ -1,7 +1,12 @@
 {
     "manifest_version": 3,
     "name": "Rohlik Meter",
-    "description": "Rohlík Stats Extension",
+    "description": "Rohlík Meter helps you review your grocery shopping habits and see which products and categories you're spending the most money on.",
+    "icons": {
+        "48": "rohlikmeter_48.png",
+        "128": "rohlikmeter_48.png"
+      },
+    "author": "msiwek43@gmail.com",
     "version": "1.0",
     "background": {
         "service_worker": "js/index.js"
@@ -13,12 +18,6 @@
       ],
     "host_permissions": [
         "https://www.rohlik.cz/*"
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": ["*.html", "*.js"],
-            "matches": ["<all_urls>"]
-        }
     ],
     "action": {
         "default_title": "Show Rohlik statistics."
