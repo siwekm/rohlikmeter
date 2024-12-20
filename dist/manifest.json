@@ -11,9 +11,6 @@
     "background": {
         "service_worker": "js/index.js"
     },
-    "permissions": [
-        "storage"
-      ],
     "host_permissions": [
         "https://www.rohlik.cz/*"
     ],
