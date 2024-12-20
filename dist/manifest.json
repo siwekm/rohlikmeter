@@ -12,8 +12,6 @@
         "service_worker": "js/index.js"
     },
     "permissions": [
-        "activeTab",
-        "tabs",
         "storage"
       ],
     "host_permissions": [
