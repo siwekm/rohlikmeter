@@ -46,6 +46,7 @@ export async function displayAggregatedItemData(sortedItems, categoryChartInstan
 
 export function renderCategoryPieCharts(categoryTotals, categoryChartInstances) {
     const categories = ['category0', 'category1', 'category2'];
+    const categoriesTitle = ['Hlavní kategorie', 'Kategorie', 'Podkategorie'];
 
     categoryChartInstances.forEach(chart => chart.destroy());
     categoryChartInstances = [];
@@ -77,7 +78,7 @@ export function renderCategoryPieCharts(categoryTotals, categoryChartInstances) 
                     },
                     title: {
                         display: true,
-                        text: `Category Distribution: ${category}`,
+                        text: categoriesTitle[index],
                         font: { size: 18 }
                     }
                 }
